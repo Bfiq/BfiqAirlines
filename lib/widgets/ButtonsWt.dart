@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../styles.dart';
 
 class ButtonsWt {
   Widget selectedButton(String text) {
     return Container(
       decoration: const BoxDecoration(
-          color: StylesApp.primaryColor,
+          color: StylesApp.secondColor,
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: Center(
         child: Text(text,
