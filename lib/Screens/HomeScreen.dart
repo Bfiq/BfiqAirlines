@@ -52,26 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
+      body: Column(
         children: [
           Container(
             //Envolver dentro de un stack para posicionar el texto y las imagenes, posiblemente el mapamundi lo posicione con z index(como capas)
             height:
-                MediaQuery.of(context).size.height / 3.5, //Separar en variable?
-            decoration: BoxDecoration(
+                MediaQuery.of(context).size.height / 3, //Separar en variable?
+            decoration: const BoxDecoration(
                 color: StylesApp.primaryColor, //Separar los estilos
                 borderRadius:
-                    BorderRadius.only(bottomLeft: Radius.circular(50))),
+                    BorderRadius.only(bottomLeft: Radius.circular(35))),
             child: Row(
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 25, left: 15),
+                    padding: const EdgeInsets.only(bottom: 30, left: 25),
                     child: Container(
-                      child: Align(
+                      child: const Align(
                         alignment: Alignment.bottomCenter,
-                        child: const Text("BOOK YOUR FLIGHT",
+                        child: Text("Book Your Flight",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -82,7 +81,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: Container(),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40),
+                          child:
+                              Image.asset("assets/airplane.png", height: 120),
+                        ),
+                      ]),
                 ),
               ],
             ),
@@ -92,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               decoration: const BoxDecoration(
                   color: StylesApp.secondLigthColor,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
               height: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,9 +145,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       TextsWt().textAlingLeft("From"),
                       TextFormField(
+                        style: const TextStyle(
+                            color: StylesApp.primaryColor,
+                            fontWeight: FontWeight.bold),
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(30),
                                 borderSide: const BorderSide(
                                     width: 0, style: BorderStyle.none)),
                             fillColor: StylesApp.secondLigthColor,
@@ -150,10 +160,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       TextsWt().textAlingLeft("To"),
                       TextFormField(
+                        style: const TextStyle(
+                            color: StylesApp.primaryColor,
+                            fontWeight: FontWeight.bold),
                         enabled: _selectedButton == 1 ? true : false,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(30),
                                 borderSide: const BorderSide(
                                     width: 0, style: BorderStyle.none)),
                             fillColor: StylesApp.secondLigthColor,
@@ -170,12 +183,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 GestureDetector(
                                   onTap: () async => selectedDate(0),
                                   child: TextFormField(
+                                    style: const TextStyle(
+                                        color: StylesApp.primaryColor,
+                                        fontWeight: FontWeight.bold),
                                     controller: _dateDepart,
                                     enabled: false,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                             borderRadius:
-                                                BorderRadius.circular(20),
+                                                BorderRadius.circular(30),
                                             borderSide: const BorderSide(
                                                 width: 0,
                                                 style: BorderStyle.none)),
@@ -211,12 +227,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     }
                                   },
                                   child: TextFormField(
+                                    style: const TextStyle(
+                                        color: StylesApp.primaryColor,
+                                        fontWeight: FontWeight.bold),
                                     controller: _dateReturn,
                                     enabled: false,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                             borderRadius:
-                                                BorderRadius.circular(20),
+                                                BorderRadius.circular(30),
                                             borderSide: const BorderSide(
                                                 width: 0,
                                                 style: BorderStyle.none)),
@@ -239,10 +258,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 TextsWt().textAlingLeft("Passengers"),
                                 TextFormField(
+                                  style: const TextStyle(
+                                      color: StylesApp.primaryColor,
+                                      fontWeight: FontWeight.bold),
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius: BorderRadius.circular(30),
                                         borderSide: const BorderSide(
                                             width: 0, style: BorderStyle.none)),
                                     fillColor: StylesApp.secondLigthColor,
@@ -259,9 +281,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 TextsWt().textAlingLeft("Class"),
                                 TextFormField(
+                                  style: const TextStyle(
+                                      color: StylesApp.primaryColor,
+                                      fontWeight: FontWeight.bold),
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius: BorderRadius.circular(30),
                                         borderSide: const BorderSide(
                                             width: 0, style: BorderStyle.none)),
                                     fillColor: StylesApp.secondLigthColor,
@@ -282,12 +307,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 60,
                           decoration: BoxDecoration(
                               color: StylesApp.secondColor,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(30)),
                           child: const Center(
                             child: Text("Search Flights",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold)),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20)),
                           ),
                         ),
                       )
@@ -298,7 +324,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }

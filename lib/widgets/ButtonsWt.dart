@@ -6,7 +6,7 @@ class ButtonsWt {
     return Container(
       decoration: const BoxDecoration(
           color: StylesApp.secondColor,
-          borderRadius: BorderRadius.all(Radius.circular(20))),
+          borderRadius: BorderRadius.all(Radius.circular(30))),
       child: Center(
         child: Text(text,
             style: const TextStyle(

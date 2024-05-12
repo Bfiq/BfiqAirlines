@@ -1,16 +1,6 @@
 # bfiq_airlines
 
-A new Flutter project.
+Proyecto de practica tomando como guía la ui de
+- [Desing Gallery](https://co.pinterest.com/pin/1102678290014943481)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-> Futura integración con Api realizada en larabel 
