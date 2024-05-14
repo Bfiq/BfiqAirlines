@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: 10),
                       GestureDetector(
-                        onTap: () => print("Guardar el Formulario"),
+                        onTap: () => Navigator.pushNamed(context, "/flights"),
                         child: Container(
                           width: double.infinity,
                           height: 60,
