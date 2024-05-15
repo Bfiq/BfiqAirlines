@@ -13,4 +13,16 @@ class StylesApp {
   ButtonStyle selectedButton = const ButtonStyle(
       backgroundColor: MaterialStatePropertyAll(secondColor),
       textStyle: MaterialStatePropertyAll(TextStyle(color: primaryColor)));
+
+  static const TextStyle boldWord20 = TextStyle(
+      color: StylesApp.primaryColor, fontWeight: FontWeight.bold, fontSize: 20);
+
+  static const TextStyle boldWord18 = TextStyle(
+      color: StylesApp.primaryColor, fontWeight: FontWeight.bold, fontSize: 18);
+
+  static const TextStyle standardWord12 =
+      TextStyle(color: StylesApp.primaryColor, fontSize: 12);
+
+  static const TextStyle standardSecondWord12 =
+      TextStyle(color: StylesApp.secondColor, fontSize: 12);
 }

@@ -1,0 +1,4 @@
+1. Agregar imagen del mapamundi
+2. Crear el módelo ticket
+3. Separar el componente/widget ticket
+4. Mejorar las imagenes
