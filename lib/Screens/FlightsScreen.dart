@@ -1,4 +1,5 @@
-import 'package:bfiq_airlines/widgets/TextsWt.dart';
+import 'package:bfiq_airlines/models/models.dart';
+import 'package:bfiq_airlines/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import '../styles.dart';
 
@@ -12,6 +13,15 @@ class FlightsScreen extends StatefulWidget {
 class _FlightsScreenState extends State<FlightsScreen> {
   static const styleText =
       TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16);
+
+  final ticket = TicketModel(
+      acronymCityDeparture: "CDG",
+      acronymCityEntry: "FLR",
+      nameAirportEntry: "Florencia Amerigo Vespucci",
+      nameDepartureAirport: "París - Charles de Gaulle",
+      departureDate: DateTime(2024, 5, 20, 9, 20),
+      arrivalDate: DateTime(2024, 5, 20, 11, 20),
+      price: 1810);
 
   @override
   Widget build(BuildContext context) {
@@ -141,121 +151,13 @@ class _FlightsScreenState extends State<FlightsScreen> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Column(
-                  children: [
-                    Container(
-                      //Crear el Modelo tiquete/ticket
-                      height: 230,
-                      decoration: BoxDecoration(
-                          color: StylesApp.secondLigthColor,
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 15),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text("CDG",
-                                    style: StylesApp
-                                        .boldWord20), //Acronimo de la ciudad de salida
-                                Text("FLR",
-                                    style: StylesApp
-                                        .boldWord20), //Acronimo de la ciudad de destino
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text(
-                                    "París - Charles \n de Gaulle", //Nombre del aeropuerto de salida
-                                    style: StylesApp.standardWord12),
-                                Text(
-                                    "Florencia \n Amerigo Vespucci", //Nombre del aeropuerto de destino
-                                    textDirection: TextDirection.rtl,
-                                    style: StylesApp.standardWord12),
-                              ],
-                            ),
-                            Image.asset(
-                              "assets/flyRoute.png",
-                              height: 80,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    TextTicket(
-                                        text: "Depart",
-                                        style: 2,
-                                        directionR: false),
-                                    TextTicket(
-                                        text: "lun 24 Jan",
-                                        directionR: false), //fecha de salida
-                                    TextTicket(
-                                        text: "9:35 am",
-                                        style: 3,
-                                        directionR: false), //hora de salida
-                                    const Text("AIRFRANCE"),
-                                  ],
-                                ),
-                                const Text(
-                                    "2:10 min"), //Tiempo estimado del vuelo
-                                Column(
-                                  children: [
-                                    TextTicket(
-                                      text: "Return",
-                                      style: 2,
-                                    ),
-                                    TextTicket(
-                                      text: "lun 24 Jan",
-                                      style: 1,
-                                    ), //Fecha de llegada
-                                    TextTicket(
-                                      text: "11:45 am",
-                                      style: 3,
-                                    ), //hora de llegada
-                                    const Text("1,181"), //precio del ticket
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
+                  children: [ticketWt(ticket)],
                 ),
               ),
             ),
           )
         ],
       ),
-    );
-  }
-
-  //Separar el widget ticket y pasarle el modelo
-
-  Widget TextTicket({String text = "", int style = 1, bool directionR = true}) {
-    //selección de estilo
-    TextStyle? styleText = null;
-
-    if (style == 1) {
-      styleText = StylesApp.standardWord12;
-    }
-
-    if (style == 2) {
-      styleText = StylesApp.standardSecondWord12;
-    }
-
-    if (style == 3) {
-      styleText = StylesApp.boldWord18;
-    }
-
-    return Text(
-      text,
-      textDirection: directionR ? TextDirection.rtl : TextDirection.ltr,
-      style: styleText,
     );
   }
 }
