@@ -5,6 +5,7 @@ class TicketModel {
   String nameAirportEntry; // nombre del aeropuerto de entrada
   DateTime departureDate; // fecha de salida
   DateTime arrivalDate; // fecha de entrada
+  //int flightMinutes; // tiempo estimado del vuelo (en minutos)
   int price;
 
   TicketModel(

@@ -15,23 +15,22 @@ Widget ticketWt(TicketModel ticket) {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text("CDG",
+            children: [
+              Text(ticket.acronymCityDeparture,
                   style:
                       StylesApp.boldWord20), //Acronimo de la ciudad de salida
-              Text("FLR",
+              Text(ticket.acronymCityEntry,
                   style:
                       StylesApp.boldWord20), //Acronimo de la ciudad de destino
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                  "París - Charles \n de Gaulle", //Nombre del aeropuerto de salida
+                  ticket.nameDepartureAirport, //Nombre del aeropuerto de salida
                   style: StylesApp.standardWord12),
-              Text(
-                  "Florencia \n Amerigo Vespucci", //Nombre del aeropuerto de destino
+              Text(ticket.nameAirportEntry, //Nombre del aeropuerto de destino
                   textDirection: TextDirection.rtl,
                   style: StylesApp.standardWord12),
             ],
@@ -70,7 +69,7 @@ Widget ticketWt(TicketModel ticket) {
                     text: "11:45 am",
                     style: 3,
                   ), //hora de llegada
-                  const Text("1,181"), //precio del ticket
+                  Text(ticket.price.toString()), //precio del ticket
                 ],
               )
             ],
